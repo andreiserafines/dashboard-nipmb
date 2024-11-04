@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Simple System</title>
+</head>
+
+<body>
+
+    <main>
+        <!-- Dashboard-->
+        <div class="grid grid-cols-5 gap-3 mb-4">
+
+            <!-- Box 1 -->
+            <div class="rounded shadow border bg-gray-100 flex flex-row justify-between p-1 gap-4 items-center">
+                <img src="https://cdn.vectorstock.com/i/500p/46/51/stingray-manta-ray-silhouette-vector-49574651.jpg"
+                    class="rounded-full h-12 w-12" alt="">
+
+                <!-- Name&Result -->
+                <div class="flex flex-col gap-1 text-end mr-2 text-gray-700">
+                    <div class="text-xs  font-semibold uppercase tracking-widest">Calypso</div>
+                    <div class="text-xl font-semibold">10</div>
+                </div>
+            </div>
+
+            <!-- Box 1 -->
+            <div class="rounded shadow border bg-gray-100 flex flex-row justify-between p-1 gap-4 items-center">
+                <img src="https://cdn.vectorstock.com/i/500p/46/51/stingray-manta-ray-silhouette-vector-49574651.jpg"
+                    class="rounded-full h-12 w-12" alt="">
+
+                <!-- Name&Result -->
+                <div class="flex flex-col gap-1 text-end mr-2 text-gray-700">
+                    <div class="text-xs  font-semibold uppercase tracking-widest">Sea Hawk</div>
+                    <div class="text-xl font-semibold">11</div>
+                </div>
+            </div>
+
+            <!-- Box 1 -->
+            <div class="rounded shadow border bg-gray-100 flex flex-row justify-between p-1 gap-4 items-center">
+                <img src="https://cdn.vectorstock.com/i/500p/46/51/stingray-manta-ray-silhouette-vector-49574651.jpg"
+                    class="rounded-full h-12 w-12" alt="">
+
+                <!-- Name&Result -->
+                <div class="flex flex-col gap-1 text-end mr-2 text-gray-700">
+                    <div class="text-xs  font-semibold uppercase tracking-widest">Dolphine</div>
+                    <div class="text-xl font-semibold">11</div>
+                </div>
+            </div>
+
+            <!-- Box 1 -->
+            <div class="rounded shadow border bg-gray-100 flex flex-row justify-between p-1 gap-4 items-center">
+                <img src="https://cdn.vectorstock.com/i/500p/46/51/stingray-manta-ray-silhouette-vector-49574651.jpg"
+                    class="rounded-full h-12 w-12" alt="">
+
+                <!-- Name&Result -->
+                <div class="flex flex-col gap-1 text-end mr-2 text-gray-700">
+                    <div class="text-xs  font-semibold uppercase tracking-widest">Stingray</div>
+                    <div class="text-xl font-semibold">11</div>
+                </div>
+            </div>
+
+            <!-- Box 1 -->
+            <div class="rounded shadow border bg-gray-100 flex flex-row justify-between p-1 gap-4 items-center">
+                <img src="https://cdn.vectorstock.com/i/500p/46/51/stingray-manta-ray-silhouette-vector-49574651.jpg"
+                    class="rounded-full h-12 w-12" alt="">
+
+                <!-- Name&Result -->
+                <div class="flex flex-col gap-1 text-end mr-2 text-gray-700">
+                    <div class="text-xs  font-semibold uppercase tracking-widest">Sea Snake</div>
+                    <div class="text-xl font-semibold">11</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Charts -->
+        <div class="text-gray-500 mt-6">Chart Displays</div>
+        
+        <div class="grid grid-cols-3 gap-2 mt-2">
+            <div class="border bg-gray-700 rounded shadow px-1">
+                <div class="flex flex-row justify-between p-2">
+                    <div class="text-gray-200">Datasets</div>
+                    <button id="view"><i class="fa-solid fa-eye text-gray-400" title="view larger size"></i></button>
+                </div>
+                <canvas class="rounded" id="myChart"></canvas>
+            </div>
+
+            <div class="border bg-gray-700 rounded shadow px-1">
+                <div class="flex flex-row justify-between p-2">
+                    <div class="text-gray-200">Datasets</div>
+                    <button id="view"><i class="fa-solid fa-eye text-gray-400" title="view larger size"></i></button>
+                </div>
+                <canvas class="rounded" id="dChart"></canvas>
+            </div>
+
+            <div class="border bg-gray-700 rounded shadow px-1">
+                <div class="flex flex-row justify-between p-2">
+                    <div class="text-gray-200">Datasets</div>
+                    <button id="view"><i class="fa-solid fa-eye text-gray-400" title="view larger size"></i></button>
+                </div>
+                <canvas class="rounded" id="pChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="text-gray-500 mt-6">Personnel Records
+            <span>
+                <select id="results-per-page" name="results-per-page" class="p-1 bg-gray-100 border rounded text-sm">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+            </span>
+        </div>
+        <table class="table-auto w-full mt-2">
+            <t-body>
+                <tr class="border-b border-gray-400 text-xs text-gray-200 bg-gray-500 p-2 uppercase">
+                    <th class="font-semibold p-2">Rank 
+                        <button id="sort-btn" onclick="sortTable()" aria-label="Sort by name">
+                            <i class='bx bxs-down-arrow'></i>
+                        </button>
+                    </th>
+                    <th class="font-semibold p-2">Full name</th>
+                    <th class="font-semibold p-2">Office</th>
+                    <th class="font-semibold p-2">Designation</th>
+                    <th class="font-semibold p-2">Group</th>
+                    <th class="font-semibold p-2">Status</th>
+                    <th class="font-semibold p-2">Action</th>
+                </tr>
+
+                <!-- Dynamic Data -->
+                <tr class="border-b text-xs text-gray-500 uppercase text-center">
+                    <td class="font-semibold p-2">LTJG</td>
+                    <td class="font-semibold p-2">Arnold Cimadas</td>
+                    <td class="font-semibold p-2">IS1</td>
+                    <td class="font-semibold p-2">Deputy IS1</td>
+                    <td class="font-semibold p-2">HSG</td>
+                    <td class="font-semibold p-2">Active</td>
+                    <td class="font-semibold p-2">
+                        <a href="">View</a>
+                        <a href="">Edit</a>
+                        <a href="">Delete</a>
+                    </td>
+                </tr>
+            </t-body>
+        </table>
+
+        <!-- Pagination -->
+        <div class="flex flex-row items-center justify-between py-2 px-4">
+            <!-- Page number -->
+            <div class="text-sm text-gray-700">Page 1 of 1</div>
+
+            <!-- Buttons -->
+            <div class="inline-flex gap-1 text-sm text-gray-500">
+                <button class="p-1 border bg-gray-200 rounded">Prev</button>
+                <button class="p-1 border bg-gray-200 rounded">Next</button>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const cta = document.getElementById('myChart');
+        const cts = document.getElementById('dChart');
+        const ctx = document.getElementById('pChart');
+
+        new Chart(cta, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: 'Stingray Records',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        new Chart(cts, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: 'Stingray Records',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: 'Stingray Records',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
